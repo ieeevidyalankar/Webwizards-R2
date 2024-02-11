@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing card</title>
+</head>
+
+<body>
+    <main>
+        <div class="plan" id="basic">
+            <h1>Basic</h1>
+            <h3>Free</h3>
+            <h5>3,000 monthly visitors</h5>
+            <ul>
+                <li>Limited reports</li>
+                <li>Unlimited projects</li>
+                <li>1TB Data storage for 10 years (at least)</li>
+            </ul>
+            <button>Start Now</button>
+        </div>
+        <div class="plan" id="pro">
+            <h1>Pro</h1>
+            <h3>$20/month</h3>
+            <h5>10,000 monthly visitors</h5>
+            <ul>
+                <li>Unlimited reports</li>
+                <li>15-days free trial</li>
+                <li>2TB Data storage for 15 years</li>
+            </ul>
+            <button>Try it</button>
+        </div>
+        <div class="plan" id="premium">
+            <h1>Premium</h1>
+            <h3>$50/month</h3>
+            <h5>12,000 monthly visitors</h5>
+            <ul>
+                <li>All from <span>Pro</span></li>
+                <li>Free Domain for 2 years</li>
+                <li>4TB Data storage for 15 years</li>
+            </ul>
+            <button>Upgrade</button>
+        </div>
+    </main>
+</body>
+
+</html><style>* {
+    margin: 0;
+    padding: 0;
+    font-family: "Courier New";
+    color: #eccbd3;
+}
+
+body {
+    background-color: #ab162d;
+}
+
+main {
+    width: 50%;
+    min-width: 700px;
+    height: 60vh;
+    min-height: 600px;
+    margin: auto;
+    margin-top: 15vh;
+    background-color: #22161a;
+    border-radius: 10px;
+    padding: 0 60px 0 100px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 35%);
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 10px 0 #07070798;
+}
+
+main::after {
+    content: "";
+    position: absolute;
+    left: -5%;
+    bottom: -60px;
+    width: 110%;
+    height: 120px;
+    background-color: #22161a1f;
+    border-radius: 100%;
+    z-index: -1;
+}
+
+.plan {
+    position: relative;
+    height: 70%;
+    left: 5%;
+}
+
+.plan:hover h1 {
+    text-decoration: underline;
+    text-decoration-color: #aa182e;
+}
+
+.plan h1 {
+    position: relative;
+    left: 100px;
+    animation: display 1s ease-out forwards;
+}
+
+.plan h3 {
+    margin-top: 20px;
+    font-weight: 100;
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+    opacity: 0;
+    animation: show-price 500ms linear 2s forwards;
+}
+
+.plan h5 {
+    font-weight: 100;
+}
+
+.plan ul {
+    margin: 50px 0;
+}
+
+.plan ul li {
+    margin-left: 20px;
+    position: relative;
+    top: -20px;
+    opacity: 0;
+    animation: fade-out 1s ease-out 1s forwards;
+}
+
+.plan button {
+    width: 70%;
+    height: 70px;
+    margin-top: 50px;
+    background-color: transparent;
+    font-size: 18px;
+    font-weight: 800;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #af2830;
+    color: #af2830;
+}
+
+.plan button:hover {
+    background-color: #af2830;
+    color: #b8b0b2;
+}
+
+.plan button:active {
+    background-color: #af2830;
+    box-shadow: 0 0 50px 1px #701a2094 inset;
+    color: #d6cfd1;
+    border-color: #701a2094;
+}
+
+#premium span {
+    font-weight: bold;
+}
+
+#premium:hover span {
+    color:#af2830;
+}
+
+
+@keyframes display {
+    from {
+        opacity: 0;
+        left: 100px;
+    }
+    to {
+        opactiy: 100;
+        left: 0;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 0;
+        top: -20px;
+    }
+    to {
+        opacity: 100;
+        top: 0;
+    }
+}
+
+@keyframes show-price {
+    from {
+        opacity: 0;
+        font-size: 1rem;
+        margin-bottom: 0.1rem;
+    }
+    to {
+        opacity: 100;
+        font-size: 1.2rem;
+        margin-bottom: 0;
+    }
+}</style>
+</html>
