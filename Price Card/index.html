@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing card</title>
+    <title>Debug Challenge - Pricing card</title>
 </head>
 
 <body>
+    <p>Fix the main grid and add animations for the plan name, price, and description, check the CSS code from line49 onwards.</p>
     <main>
         <div class="plan" id="basic">
             <h1>Basic</h1>
@@ -16,7 +17,7 @@
             <ul>
                 <li>Limited reports</li>
                 <li>Unlimited projects</li>
-                <li>1TB Data storage for 10 years (at least)</li>
+                <li>139GB Data storage for 10 years (at least)</li>
             </ul>
             <button>Start Now</button>
         </div>
@@ -27,7 +28,7 @@
             <ul>
                 <li>Unlimited reports</li>
                 <li>15-days free trial</li>
-                <li>2TB Data storage for 15 years</li>
+                <li>512GB Data storage for 15 years</li>
             </ul>
             <button>Try it</button>
         </div>
@@ -38,7 +39,7 @@
             <ul>
                 <li>All from <span>Pro</span></li>
                 <li>Free Domain for 2 years</li>
-                <li>4TB Data storage for 15 years</li>
+                <li>1TB Data storage for 15 years</li>
             </ul>
             <button>Upgrade</button>
         </div>
@@ -67,7 +68,7 @@ main {
     border-radius: 10px;
     padding: 0 60px 0 100px;
     position: relative;
-    display: grid;
+    display: block;
     grid-template-columns: repeat(3, 35%);
     justify-content: center;
     align-items: center;
@@ -100,7 +101,7 @@ main::after {
 .plan h1 {
     position: relative;
     left: 100px;
-    animation: display 1s ease-out forwards;
+    animation: display 1s; /* hint hint */
 }
 
 .plan h3 {
@@ -109,7 +110,7 @@ main::after {
     font-size: 1rem;
     margin-bottom: 0.3rem;
     opacity: 0;
-    animation: show-price 500ms linear 2s forwards;
+    animation: show-price 2s; /* hint hint */
 }
 
 .plan h5 {
@@ -124,8 +125,8 @@ main::after {
     margin-left: 20px;
     position: relative;
     top: -20px;
-    opacity: 0;
-    animation: fade-out 1s ease-out 1s forwards;
+    opacity: 1;
+    animation: 1s; /*hint hint*/
 }
 
 .plan button {
@@ -163,37 +164,20 @@ main::after {
 
 
 @keyframes display {
-    from {
-        opacity: 0;
-        left: 100px;
-    }
-    to {
-        opactiy: 100;
-        left: 0;
-    }
+    /*
+    fill these keyframes with animations for the elements.
+    */
 }
 
-@keyframes fade-out {
-    from {
-        opacity: 0;
-        top: -20px;
-    }
-    to {
-        opacity: 100;
-        top: 0;
-    }
+@keyframes fadeout {
+        /* 
+        look out for where these keyframes are being used in the above css.
+        */
 }
 
-@keyframes show-price {
-    from {
-        opacity: 0;
-        font-size: 1rem;
-        margin-bottom: 0.1rem;
-    }
-    to {
-        opacity: 100;
-        font-size: 1.2rem;
-        margin-bottom: 0;
-    }
+@keyframes showprice {
+    /*
+    for example, price keyframe is used for the price in the <h3> tag, which won't be displayed unless you animate it properly.
+    */
 }</style>
 </html>
